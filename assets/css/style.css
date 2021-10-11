@@ -634,7 +634,7 @@ section {
 }
 
 .counts .count-box:hover::before {
-  background: #79b472;
+  background: #8bc783;
   top: 0;
   border-radius: 0px;
 }
@@ -953,12 +953,12 @@ section {
 }
 .visualization a {
   color:#77d17b;
-  font-style: oblique;
+ 
 
 }
 .visualization a:hover {
   color:#1a851f;
-  font-style: oblique;
+ 
 
 }
 
@@ -969,17 +969,12 @@ section {
   background: #fff;
   transition: ease-in-out 0.3s;
 }
-.visualization .icon-box i {
-  float: left;
-  color: #3498db;
-  font-size: 40px;
-  line-height: 0;
-}
+
 .visualization .icon-box h4 {
   margin-left: 10px;
   font-weight: 700;
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 30px;
 }
 .visualization .icon-box h4 a {
   color: #384046;
@@ -987,8 +982,11 @@ section {
 }
 .visualization .icon-box p {
   margin-left: 10px;
+  margin-top: 15px;
   line-height: 24px;
-  font-size: 14px;
+  font-size: 18px;
+  width: 67%;
+  float: left;
 }
 .visualization .icon-box:hover {
   box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.08);
@@ -996,7 +994,53 @@ section {
 .visualization .icon-box:hover h4 a {
   color: #208014;
 }
+.visualization .icon-box img{
+  float: right;
+  width: 30%;
+}
 
+
+.visualization .icon-box-2 {
+  padding: 30px;
+  border-radius: 6px;
+  background: #fff;
+  transition: ease-in-out 0.3s;
+}
+.visualization .icon-box-2 i {
+  float: left;
+  color: #3498db;
+  font-size: 40px;
+  line-height: 0;
+}
+.visualization .icon-box-2 h4 {
+  margin-left: 10px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 30px;
+  text-align: right;
+}
+.visualization .icon-box-2 h4 a {
+  color: #384046;
+  transition: 0.3s;
+}
+.visualization .icon-box-2 p {
+  margin-left: 10px;
+  line-height: 24px;
+  margin-top: 15px;
+  font-size: 18px;
+  float: right;
+  width: 70%;
+}
+.visualization .icon-box-2:hover {
+  box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.08);
+}
+.visualization .icon-box-2:hover h4 a {
+  color: #208014;
+}
+.visualization .icon-box-2 img{
+  float: left;
+  width: 28%;
+}
 
 /*--------------------------------------------------------------
 # Breadcrumbs

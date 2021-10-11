@@ -248,17 +248,29 @@
           <h2>About SynPose</h2>
           <p>SynPose is a large, densely labeled synthetic dataset specifically designed
             for crowded human pose estimation in classroom and meeting
-            scenarios. Our dataset is constructed by exploiting Grand Theft Auto V (GTA V), a highly photorealistic
-            open-world game developed by Rockstar North. Click on the TABs above to see the detailed properties of SynPose.</p>
+            scenarios. Our dataset is constructed by exploiting Grand Theft Auto V (<a href="https://www.rockstargames.com/games/V">GTA V</a>), a highly photorealistic
+            open-world game developed by Rockstar North. Below is a demo video of the dataset construction. </p>
         </div>
         
         
-        <div class="row">
-          <video src="./assets/video/demonstration.mp4" controls="controls" controlsautoplay ></video>
+        <!-- <div class="row">
+          <video type="video/mp4" src="assets/video/demonstration.mp4" controls="controls" controlsautoplay ></video>
 
+        </div> -->
+
+        <div class="row">
+          <iframe width="1024" height="768" src="https://www.youtube.com/embed/zn_n1tX_cdU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+
+        <div class="section-title" style="margin-top: 20px;">
+        
+          <p> For more information about the properties of the dataset please click into the <a href="#counts"><b><u>tabs above</u></b></a>. </p>
+        </div>
+
 
       </div>
+
+
     </section>
  
 
@@ -269,20 +281,45 @@
         <div class="section-title">
           <h2>Evaluation visualization</h2>
           <p> We propose a novel Classroom-style Transfer Generative Adversarial Network (CTGAN) to reduce the domain gap by transferring synthetic images to realistic classroom style. Thus, these translated
-            synthetic images are used train <a href =https://github.com/HRNet/DEKR>a pose estimation model</a> and test on our collected real-classroom images. Here are more visualization results: </p>
+            synthetic images are used to train <a href =https://github.com/HRNet/DEKR>a pose estimation model</a> and test on our collected real-classroom images. Here are more visualization results: </p>
         </div>
        
         <div class="row">
-          <div class="col-md-6 mt-4">
+          <div>
             <div class="icon-box">
               <h4><a href="inner-style.html">CTGAN evaluation</a></h4>
-              <p>Click here to see more visualizations about comparison of different constraints for translating synthetic images to real-classroom domain.</p>
+              <div class="row">
+                <p >We adapt the technique of CycleGAN to learn a translation mapping between SynPose and real-world classroom images. Moreover, we add an id-loss to avoid the color changes and a mask-loss to 
+                  remove the artifacts in translated images.
+                   Click below to see more visualizations about comparison of different constraints in CTGAN.
+
+                <br>
+                <br>
+                <span style="font-size: larger;"><a href = "inner-style.html"><b><u>See more..</u></b></a></span>
+                </p>
+             
+                <img src="assets/img/transfer/comb_fig.jpg">
+              </div>
+             
+             
             </div>
           </div>
-          <div class="col-md-6 mt-4">
-            <div class="icon-box">  
+        </div>
+        <div class="row" style="margin-top: 20px;">
+        <div>
+            <div class="icon-box-2">  
               <h4><a href="inner-visualization.html">Pose estimation evaluation</a></h4>
-              <p>Click here to see more visualizations about qualitative results of pose estimation evaluation on real-classroom images. </p>
+              <div class="row">
+                <img src="assets/img/visualization/comb_fig.jpg">
+                <p>We train the pose estimation model on <a href="https://cocodataset.org/#home">COCO</a>, <a href="https://github.com/Jeff-sjtu/CrowdPose">Crowdpose</a> and our SynPose subsets then test on real-world classroom images. 
+                  Results show that our dataset can help improve the performance of the model in crowded classroom scenarios.
+                  Click below to see more visualizations about qualitative results of pose estimation evaluation on real-classroom images.
+                  <br>
+                  <br>
+                  <span style="font-size: larger;"><a href = "inner-visualization.html"><b><u>See more..</u></b></a></span>
+                </p>
+               
+              </div>
             </div>
         </div>
        
