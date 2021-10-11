@@ -339,7 +339,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 #hero .carousel-item::before {
   content: "";
+<<<<<<< HEAD
   background-color: rgba(45, 103, 60, 0.8);
+=======
+  background-color: rgba(0, 0, 0, 0.75);
+>>>>>>> 2ff581ae02429a19e3900cf849e8bbca9efe0e31
 }
 #hero .carousel-container {
   display: flex;
@@ -566,6 +570,7 @@ section {
   margin-bottom: 0;
 }
 
+<<<<<<< HEAD
 /*--------------------------------------------------------------
 # Why Us
 --------------------------------------------------------------*/
@@ -781,6 +786,133 @@ section {
     align-items: center;
     justify-content: flex-end;
   }
+=======
+
+
+/*--------------------------------------------------------------
+# Counts
+--------------------------------------------------------------*/
+.counts {
+  background: white;
+  padding: 70px 0 20px 0;
+}
+.counts .count-box {
+  padding: 30px 30px 25px 30px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  background: #fff;
+
+  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+
+
+
+}
+.counts button{
+  background: #347a2a;
+  border: 0;
+  padding: 5px 10px;
+  color: #ffffff;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+.counts button:hover{
+  background: #1a6110;
+}
+
+.counts .detail{
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+.counts .detail a {
+  transition: color 0.3s;
+  color: #52869d;
+}
+.counts   .detail a:hover {
+  color: #67b0d1;
+}
+
+
+.counts .count-box:hover .detail {
+  margin-top: 10px;
+  max-height: 300px;
+}
+
+.counts .count-box::before {
+  content: "";
+  position: absolute;
+  background: white;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 100%;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.counts .count-box:hover::before {
+  background: #79b472;
+  top: 0;
+  border-radius: 0px;
+}
+
+
+
+.counts .count-box i {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  background: #347a2a;
+  padding: 12px;
+  color: #fff;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+
+
+}
+.counts .count-box span {
+  font-size: 36px;
+  display: block;
+  font-weight: 600;
+  color: #124364;
+}
+.counts .count-box:hover span {
+  font-size: 36px;
+  display: block;
+  font-weight: 600;
+  color: #ffffff;
+}
+.counts .count-box p {
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 17px;
+}
+
+
+
+/*--------------------------------------------------------------
+# dataset
+--------------------------------------------------------------*/
+.dataset{
+  background-color: #ffffff;
+}
+.dataset p {
+  margin-bottom: 0;
+  font-size: 18px;
+  color: #3f3f3f;
+  text-align: justify;
+>>>>>>> 2ff581ae02429a19e3900cf849e8bbca9efe0e31
 }
 
 /*--------------------------------------------------------------
@@ -943,11 +1075,16 @@ section {
   padding: 0;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2ff581ae02429a19e3900cf849e8bbca9efe0e31
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
 .team .member {
   text-align: center;
+<<<<<<< HEAD
   margin-bottom: 20px;
   box-shadow: 0px 0px 12px 0px rgba(34, 34, 34, 0.07);
   padding: 30px 20px;
@@ -962,22 +1099,67 @@ section {
   font-weight: 700;
   margin-bottom: 2px;
   font-size: 18px;
+=======
+  margin-bottom: 80px;
+  position: relative;
+}
+.team .member .pic {
+  overflow: hidden;
+}
+.team .member .member-info {
+  position: absolute;
+  top: 85%;
+  left: 20px;
+  right: 20px;
+  background: #fff;
+  padding: 20px 0;
+  color: #2f4d5a;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  max-height: 95px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+.team .member:hover .member-info {
+  max-height: 300px;
+}
+.team .member h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #2f4d5a;
+  position: relative;
+  padding-bottom: 10px;
+}
+.team .member h4::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: #b1cbd7;
+  bottom: 0;
+  left: calc(50% - 25px);
+>>>>>>> 2ff581ae02429a19e3900cf849e8bbca9efe0e31
 }
 .team .member span {
   font-style: italic;
   display: block;
   font-size: 13px;
 }
+<<<<<<< HEAD
 .team .member p {
   padding-top: 10px;
   font-size: 14px;
   font-style: italic;
   color: #aaaaaa;
 }
+=======
+>>>>>>> 2ff581ae02429a19e3900cf849e8bbca9efe0e31
 .team .member .social {
   margin-top: 15px;
 }
 .team .member .social a {
+<<<<<<< HEAD
   color: #919191;
   transition: 0.3s;
 }
@@ -1142,10 +1324,103 @@ section {
   }
 }
 
+=======
+  transition: color 0.3s;
+  color: #52869d;
+}
+.team .member .social a:hover {
+  color: #67b0d1;
+}
+.team .member .social i {
+  font-size: 16px;
+  margin: 0 2px;
+}
+@media (max-width: 992px) {
+  .team .member {
+    margin-bottom: 110px;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# ethical
+--------------------------------------------------------------*/
+.ethical{
+  background-color: #ffffff;
+}
+.ethical p {
+  margin-bottom: 0;
+  font-size: 18px;
+  color: #3f3f3f;
+  text-align: justify;
+}
+
+
+/*--------------------------------------------------------------
+# visualization
+--------------------------------------------------------------*/
+.visualization{
+  background-color: #ebf7ed;
+}
+.visualization p {
+  margin-bottom: 0;
+  font-size: 18px;
+  color: #3f3f3f;
+  text-align: justify;
+}
+.visualization a {
+  color:#77d17b;
+  font-style: oblique;
+
+}
+.visualization a:hover {
+  color:#1a851f;
+  font-style: oblique;
+
+}
+
+
+.visualization .icon-box {
+  padding: 30px;
+  border-radius: 6px;
+  background: #fff;
+  transition: ease-in-out 0.3s;
+}
+.visualization .icon-box i {
+  float: left;
+  color: #3498db;
+  font-size: 40px;
+  line-height: 0;
+}
+.visualization .icon-box h4 {
+  margin-left: 10px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+.visualization .icon-box h4 a {
+  color: #384046;
+  transition: 0.3s;
+}
+.visualization .icon-box p {
+  margin-left: 10px;
+  line-height: 24px;
+  font-size: 14px;
+}
+.visualization .icon-box:hover {
+  box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.08);
+}
+.visualization .icon-box:hover h4 a {
+  color: #208014;
+}
+
+
+>>>>>>> 2ff581ae02429a19e3900cf849e8bbca9efe0e31
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
 .breadcrumbs {
+<<<<<<< HEAD
   padding: 15px 0;
   background: #fbfbfb;
   min-height: 40px;
@@ -1157,6 +1432,13 @@ section {
 }
 .breadcrumbs h2 {
   font-size: 28px;
+=======
+  padding: 40px 0;
+  margin-top: 70px;
+}
+.breadcrumbs h2 {
+  font-size: 26px;
+>>>>>>> 2ff581ae02429a19e3900cf849e8bbca9efe0e31
   font-weight: 300;
 }
 .breadcrumbs ol {
@@ -1165,7 +1447,11 @@ section {
   list-style: none;
   padding: 0;
   margin: 0;
+<<<<<<< HEAD
   font-size: 14px;
+=======
+  font-size: 15px;
+>>>>>>> 2ff581ae02429a19e3900cf849e8bbca9efe0e31
 }
 .breadcrumbs ol li + li {
   padding-left: 10px;
@@ -1173,7 +1459,11 @@ section {
 .breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
+<<<<<<< HEAD
   color: #3c3c3c;
+=======
+  color: #4f5a62;
+>>>>>>> 2ff581ae02429a19e3900cf849e8bbca9efe0e31
   content: "/";
 }
 @media (max-width: 768px) {
@@ -1188,6 +1478,11 @@ section {
   }
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 2ff581ae02429a19e3900cf849e8bbca9efe0e31
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
