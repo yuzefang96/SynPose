@@ -114,17 +114,17 @@
     <section class="inner-page">
       <div class="container">
         <p>
-          The human pose estimation experiments are based on DEKR. We train DEKR on coco, crowdpose and SynPose respectively, and then test it on the real dataset. The real dataset comes from classroom surveillance videos of Shanghai Jiao Tong University, which contains classrooms of different sizes, and we divide them into large, medium and small classrooms.
-          Each classroom has three surveillance cameras, two from the front and one from the back.
+          The human pose estimation experiments are based on <a href =https://github.com/HRNet/DEKR><b>DEKR</b></a>. We train DEKR on coco, crowdpose and SynPose respectively, and then test it on the real dataset. The real dataset comes from classroom surveillance videos of Shanghai Jiao Tong University, which contains classrooms of different sizes, and we divide them into <b>large</b>, <b>medium</b> and <b>small</b> classrooms.
+          Each classroom has three surveillance cameras, two from the <b>front</b> and one from the <b>back</b>.
 
           <br>
           <br>
-          For a fair comparison, we generated two subsets, SynPose14 and SynPose17, which have the same data size and number of joints as the training sets of Crowdpose and COCO, respectively. We use HRNet-W32 as a backbone and set the max training epoch number to 100.
-          The following images show the visualization of the model in a real classroom scenario after training with COCO, crowdpose and two subsets of SYnPose after CTGAN, respectively.
+          For a fair comparison, we generated two subsets, <b>SynPose14</b> and <b>SynPose17</b>, which have the same data size and number of joints as the training sets of Crowdpose and COCO, respectively. We use HRNet-W32 as a backbone and set the max training epoch number to 100.
+          The following images show the visualization of the model in a real classroom scenario after training with COCO, crowdpose and two subsets of SynPose after CTGAN, respectively.
           <br>
           <br>
           It can be seen that the model trained with our dataset can extract the poses of students sitting in the corner and has a better performance in large classrooms with a dense distribution of students.
-          In addition, the model trained with synpose performs well in images taken from behind due to the rich diversity of viewpoints.
+          In addition, the model trained with SynPose performs well in images taken from behind due to the rich diversity of viewpoints.
         </p>
       </div>
     </section>
