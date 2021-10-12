@@ -114,7 +114,17 @@
     <section class="inner-page">
       <div class="container">
         <p>
-          Visualization results.
+          The human pose estimation experiments are based on DEKR. We train DEKR on coco, crowdpose and SynPose respectively, and then test it on the real dataset. The real dataset comes from classroom surveillance videos of Shanghai Jiao Tong University, which contains classrooms of different sizes, and we divide them into large, medium and small classrooms.
+          Each classroom has three surveillance cameras, two from the front and one from the back.
+
+          <br>
+          <br>
+          For a fair comparison, we generated two subsets, SynPose14 and SynPose17, which have the same data size and number of joints as the training sets of Crowdpose and COCO, respectively. We use HRNet-W32 as a backbone and set the max training epoch number to 100.
+          The following images show the visualization of the model in a real classroom scenario after training with COCO, crowdpose and two subsets of SYnPose after CTGAN, respectively.
+          <br>
+          <br>
+          It can be seen that the model trained with our dataset can extract the poses of students sitting in the corner and has a better performance in large classrooms with a dense distribution of students.
+          In addition, the model trained with synpose performs well in images taken from behind due to the rich diversity of viewpoints.
         </p>
       </div>
     </section>
@@ -140,129 +150,41 @@
           </div>
         </div> -->
 
-        <div class="row portfolio-container">
+        <div class="row portfolio-container" id = "result">
 
-          <div class="col-lg-3 col-md-6 portfolio-item">
-            <div class="portfolio-wrap">
-              <img src="assets/img/visualization/1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Origin</h4>
-                <p>App</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/visualization/1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item">
-            <div class="portfolio-wrap">
-              <img src="assets/img/visualization/2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>App 2</h4>
-                <p>App</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/visualization/2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item">
-            <div class="portfolio-wrap">
-              <img src="assets/img/visualization/3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Web 2</h4>
-                <p>Web</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/visualization/3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item">
-            <div class="portfolio-wrap">
-              <img src="assets/img/visualization/4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Card 1</h4>
-                <p>Card</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/visualization/4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item">
-            <div class="portfolio-wrap">
-              <img src="assets/img/visualization/5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Web 3</h4>
-                <p>Web</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/visualization/5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item">
-            <div class="portfolio-wrap">
-              <img src="assets/img/visualization/6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Card 2</h4>
-                <p>Card</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/visualization/6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item">
-            <div class="portfolio-wrap">
-              <img src="assets/img/visualization/7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>App 3</h4>
-                <p>App</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/visualization/7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item">
-            <div class="portfolio-wrap">
-              <img src="assets/img/visualization/8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Card 3</h4>
-                <p>Card</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/visualization/8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
+          <script type="text/javascript">
+          let list = ['crowdpose', 'crowdpose_ctgan', 'coco', 'coco_ctgan']
+          s = ''
+          for (var i=1;i<=3;i++){
+            for(var j = 0;j<list.length;j++){
+              s += '<div class="col-lg-3 col-md-6 portfolio-item">'
+              s +='<div class="portfolio-wrap">'
+              s += '<img src="assets/img/visualization/class'+i+'_'+list[j]+'.jpg" class="img-fluid" alt="">'
+              s +='<div class="portfolio-info">'
+              s +=' <h4>'+list[j]+'</h4>'
+              s +='<div class="portfolio-links">'
+              s +='<a href="assets/img/visualization/class'+i+'_'+list[j]+'.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>'
+              s +='</div></div></div></div>'
+              
+            }
+          }
+    
+          var Uls = document.getElementById('result')
+          Uls.innerHTML = s
+           </script>
+    
+            
 
           
 
         </div>
 
+     
+
       </div>
     </section><!-- End Portfolio Section -->
 
-
-
+    
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->

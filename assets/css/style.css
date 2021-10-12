@@ -1137,3 +1137,10 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+
+.inner-page p{
+  font-size: 18px;
+  text-align: justify;
+
+}
