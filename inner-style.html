@@ -114,7 +114,119 @@
     <section class="inner-page">
       <div class="container">
         <p>
-          We propose a novel Classroom-style Transfer Generative Adversarial Network(CTGAN) to reduce the domain gap by transferring synthetic images to realistic classroom style.
+          We propose a novel <b>C</b>lassroom-style <b>T</b>ransfer <b>G</b>enerative <b>A</b>dversarial <b>N</b>etwork(<b>CTGAN</b>) to reduce the domain gap by transferring synthetic images to realistic classroom style.
+          We adapt the technique of CycleGAN and add two constraints: <b>semantic shift regularization</b> and <b>artifact removal</b>.
+          <br>
+          <br>
+          <p><b>CycleGAN.</b></p>
+
+          <div class="row">
+          <div class="col-lg-3 col-md-6 portfolio-item filter-origin">
+            <div class="portfolio-wrap">
+              <img src="assets/img/transfer/origin.jpg" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 portfolio-item filter-origin">
+            <div class="portfolio-wrap">
+              <img src="assets/img/transfer/cyclegan.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+        <br>
+          <p>There is no constraint in the original cyclegan on the <b>color distribution</b> of the generated image and the original image. It can be seen that the color of a person's clothes or even skin may change dramatically in the transformed image.</p>
+        </p>
+
+        <br>
+          <br>
+          <p><b>Semantic shift regularization.</b></p>
+
+          <div class="row">
+          <div class="col-lg-3 col-md-6 portfolio-item filter-origin">
+            <div class="portfolio-wrap">
+              <img src="assets/img/transfer/origin.jpg" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 portfolio-item filter-origin">
+            <div class="portfolio-wrap">
+              <img src="assets/img/transfer/cyclegan.png" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 portfolio-item filter-origin">
+            <div class="portfolio-wrap">
+              <img src="assets/img/transfer/idloss.png" class="img-fluid" alt="">
+            </div>
+          </div>
+        </div>
+
+     
+        <br>
+          <p>To address this problem, we use
+            the inside-domain identity constraint as an aid to image
+            translation, forcing the network to learn the identity mapping
+            when samples from the target domain are provided as input to
+            the generator.After adding this constraint, the transferred images can basically inherit the original color distribution.</p>
+        </p>
+
+
+        <br>
+          <br>
+          <p><b>Artifact removal.</b></p>
+          
+          <p>As shown in the image above, the transferred images have noisy textures, which are often referred to as <b>artifacts</b>. 
+            GAN-based image-to-image translation models often introduce artifacts when there is a large scene layout distribution gap between source and target datasets. For example, <a href = "https://arxiv.org/pdf/2007.15651.pdf">this paper</a> have shown that
+            when transforming images from GTA to Cityscapes, GANs commonly introduce objects such as car logos at the bottom:
+            <br>
+            <br>
+            <img src="assets/img/transfer/artifact1.png" style="width: 49%;"><img src="assets/img/transfer/artifact2.png" style="width: 49%;">
+            <br>
+            <p>In our case, the textures in the transferred images may be derived from the table and chair arrangements in the images of the real dataset.
+              To eliminate these artifacts, we used the <b>stencil modality</b> as a mask to ensure that the background remains as unchanged as possible from the original image without destroying the domain adaptation.
+
+            </p>
+            <div class="row">
+              <div class="col-lg-3 col-md-6 portfolio-item filter-origin">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/transfer/origin.jpg" class="img-fluid" alt="">
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 portfolio-item filter-origin">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/transfer/cyclegan.png" class="img-fluid" alt="">
+                </div>
+              </div>
+    
+              <div class="col-lg-3 col-md-6 portfolio-item filter-origin">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/transfer/idloss.png" class="img-fluid" alt="">
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 portfolio-item filter-origin">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/transfer/ctgan.png" class="img-fluid" alt="">
+                </div>
+              </div>
+
+            </div>
+            <br>
+
+            <p>We note that the images after CTGAN tend to change the floor to red, which may be due to the bias in our real dataset:
+              </p>
+              <div style=" display: -webkit-flex; display: flex; -webkit-justify-content: space-around; justify-content: space-around;">
+              <img src="assets/img/transfer/real_1.jpg" width="24%"><img src="assets/img/transfer/real_2.jpg" width="24%"><img src="assets/img/transfer/real_3.jpg" width="24%"><img src="assets/img/transfer/real_4.jpg" width="24%">
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <p>Below are more visualizations about comparison of different constraints for translating synthetic images to real-classroom domain.</p>
+          
+          
+          </p>
         </p>
       </div>
     </section>
@@ -123,10 +235,6 @@
     <section id="portfolio" class="portfolio">
       <div class="container">
 
-        <!-- <div class="section-title">
-          <h2>Style Transfer</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div> -->
 
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
@@ -134,125 +242,37 @@
               <li data-filter="*" class="filter-active">All</li>
               <li data-filter=".filter-origin">Origin</li>
               <li data-filter=".filter-cyclegan">CycleGAN</li>
-              <li data-filter=".filter-cyclegan_idloss">+ id Loss</li>
+              <li data-filter=".filter-idloss">+ id Loss</li>
               <li data-filter=".filter-ctgan">+id loss + mask loss(CTGAN)</li>
             </ul>
           </div>
         </div>
 
-        <div class="row portfolio-container">
+        <div class="row portfolio-container" id = "result">
+          <script type="text/javascript">
+            let list = ['origin', 'cyclegan', 'idloss', 'ctgan']
+            let type = ['jpg', 'png', 'png', 'png']
+            s = ''
+            for (var i=1;i<=11;i++){
+              for(var j = 0;j<list.length;j++){
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-origin">
-            <div class="portfolio-wrap">
-              <img src="assets/img/transfer/origin/v4_1+1-3-6-14.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Origin</h4>
-                <p>App</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/transfer/origin/v4_1+1-3-6-14.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
+                s += '<div class="col-lg-3 col-md-6 portfolio-item filter-'+list[j]+'">'
+                s +='<div class="portfolio-wrap">'
+                s += '<img src="assets/img/transfer/'+list[j]+'/'+i+'.'+type[j]+'" class="img-fluid" alt="">'
+                s +='<div class="portfolio-info">'
+                s +=' <h4>'+list[j]+'</h4>'
+                s +='<div class="portfolio-links">'
+                s +='<a href="assets/img/transfer/'+list[j]+'/'+i+'.'+type[j]+'" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>'
+                s +='</div></div></div></div>'
+                
+              }
+            }
+      
+            var Uls = document.getElementById('result')
+            Uls.innerHTML = s
+             </script>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-cyclegan">
-            <div class="portfolio-wrap">
-              <img src="assets/img/transfer/cyclegan/v4_1+1-3-6-14_fake_B_cyclegan.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>App 2</h4>
-                <p>App</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/transfer/cyclegan/v4_1+1-3-6-14_fake_B_cyclegan.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6 portfolio-item filter-cyclegan_idloss">
-            <div class="portfolio-wrap">
-              <img src="assets/img/transfer/cyclegan_idloss/v4_1+1-3-6-14_fake_B_idloss.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Web 2</h4>
-                <p>Web</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/transfer/cyclegan_idloss/v4_1+1-3-6-14_fake_B_idloss.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-ctgan">
-            <div class="portfolio-wrap">
-              <img src="assets/img/transfer/ctgan/v4_1+1-3-6-14_fake_B_idtm15.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Card 1</h4>
-                <p>Card</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/transfer/ctgan/v4_1+1-3-6-14_fake_B_idtm15.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-origin">
-            <div class="portfolio-wrap">
-              <img src="assets/img/transfer/origin/v4_6+9-3-5-34.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Web 3</h4>
-                <p>Web</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/transfer/origin/v4_6+9-3-5-34.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-cyclegan">
-            <div class="portfolio-wrap">
-              <img src="assets/img/transfer/cyclegan/v4_6+9-3-5-34_fake_B_cyclegan.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Card 2</h4>
-                <p>Card</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/transfer/cyclegan/v4_6+9-3-5-34_fake_B_cyclegan.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-cyclegan_idloss">
-            <div class="portfolio-wrap">
-              <img src="assets/img/transfer/cyclegan_idloss/v4_6+9-3-5-34_fake_B_idloss.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>App 3</h4>
-                <p>App</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/transfer/cyclegan_idloss/v4_6+9-3-5-34_fake_B_idloss.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 portfolio-item filter-ctgan">
-            <div class="portfolio-wrap">
-              <img src="assets/img/transfer/ctgan/v4_6+9-3-5-34_fake_B_idtm15.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <!-- <h4>Card 3</h4>
-                <p>Card</p> -->
-                <div class="portfolio-links">
-                  <a href="assets/img/transfer/ctgan/v4_6+9-3-5-34_fake_B_idtm15.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title=""><i class="bx bx-plus"></i></a>
-                  <!-- <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a> -->
-                </div>
-              </div>
-            </div>
-          </div>
 
           
 
