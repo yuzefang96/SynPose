@@ -114,8 +114,37 @@
     <section class="inner-page">
       <div class="container">
         <p>
-        TBD.
+          We obtained 59 joints of each instance by calling GTA V script native functions, including 6 face joints, 21 body joints and 32 finger joints.
+           We also generated subsets with the same joints and connections as COCO and crowdpose, respectively.
         </p>
+        <br>
+
+        <div class="row">
+          <div class="col-lg-4" style="text-align: center;">
+            <img src="assets/img/keypoint/SynPose.jpg" style="width: 70%;">
+            <p style="text-align: center;">SynPose - 59 keypoints</p>
+          </div>
+          <div class="col-lg-4" style="text-align: center;">
+            <img src="assets/img/keypoint/SynPose14.jpg" style="width: 70%;">
+            <p style="text-align: center;">SynPose14 - Crowdpose style</p>
+          </div>
+          <div class="col-lg-4" style="text-align: center;">
+            <img src="assets/img/keypoint/SynPose17.jpg" style="width: 70%;">
+            <p style="text-align: center;">SynPose17 - COCO style</p>
+          </div>
+        </div>
+
+        <br>
+        <br>
+        <p>
+          In addition, we provide occlusion annotation for each joint, divided into <b>self-occlusion</b> (joint is occluded by other body parts) and <b>occlusion</b> 
+          (joint is occluded by other people or objects). The following is a demonstration video of the occlusion information:
+        </p>
+        <div class="row">
+          <iframe width="1024" height="768" src="https://www.youtube.com/embed/kUQ1gnbpGI4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        Our generation pipeline is based on <a href="http://www.dev-c.com/gtav/scripthookv/">Script Hook V</a>. Occlusion annotation is inspired by <a href="https://github.com/fabbrimatteo/JTA-Mods">this mod.</a>
+
       </div>
     </section>
 
