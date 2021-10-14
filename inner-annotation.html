@@ -114,8 +114,73 @@
     <section class="inner-page">
       <div class="container">
         <p>
-          TBD.
+          SynPose has two annotation types: COCO style and crowdpose style. Both of their data format are inspired by <a href="https://cocodataset.org/#format-data">COCO's data format</a>. The annotations are stored using JSON. The following shows the basic data structure of SynPose:
         </p>
+
+        <div class="json">
+          <div class="jsonreg">{</div>
+          <div class="jsonk">"info"           </div><div class="jsonv">: info,</div>
+          <div class="jsonk">"images"         </div><div class="jsonv">: [image],</div>
+          <div class="jsonk">"annotations"    </div><div class="jsonv">: [annotation],</div>
+          <div class="jsonk">"licenses"       </div><div class="jsonv">: [license],</div>
+          <div class="jsonk">"categories"       </div><div class="jsonv">: [category],</div>
+          <div class="jsonreg">}</div>
+          <br>
+          <div class="jsonreg">info{</div>
+          <div class="jsonk">"year"           </div><div class="jsonv">: int,</div>
+          <div class="jsonk">"version"        </div><div class="jsonv">: str,</div>
+          <div class="jsonk">"description"    </div><div class="jsonv">: str,</div>
+          <div class="jsonk">"contributor"    </div><div class="jsonv">: str,</div>
+          <div class="jsonk">"url"            </div><div class="jsonv">: str,</div>
+          <div class="jsonk">"date_created"   </div><div class="jsonv">: datetime,</div>
+          <div class="jsonreg">}</div>
+          <br>
+          <div class="jsonreg">image{</div>
+          <div class="jsonk">"id"             </div><div class="jsonv">: int,</div>
+          <div class="jsonk">"width"          </div><div class="jsonv">: int,</div>
+          <div class="jsonk">"height"         </div><div class="jsonv">: int,</div>
+          <div class="jsonk">"file_name"      </div><div class="jsonv">: str,</div>
+          <!-- <div class="jsonk">"license"        </div><div class="jsonv">: int,</div>
+          <div class="jsonk">"flickr_url"     </div><div class="jsonv">: str,</div>
+          <div class="jsonk">"coco_url"       </div><div class="jsonv">: str,</div>
+          <div class="jsonk">"date_captured"  </div><div class="jsonv">: datetime,</div> -->
+          <div class="jsonreg">}</div>
+          <br>
+          <div class="jsonreg">annotation{</div>
+          <div class="jsonk">"id"             </div><div class="jsonv">: int,</div>
+          <div class="jsonk">"image_id"       </div><div class="jsonv">: int,</div>
+          <div class="jsonk">"category_id"    </div><div class="jsonv">: int,</div>
+          <div class="jsonk">"bbox"           </div><div class="jsonv">: [x,y,width,height],</div>
+          <div class="jsonk">"iscrowd"        </div><div class="jsonv">: 0 or 1,</div>
+          <div class="jsonk">"keypoints"      </div><div class="jsonv">: [x1,y1,v1,...],</div>
+          <div class="jsonk">"num_keypoints"  </div><div class="jsonv">: int,</div>
+          <div class="jsonreg">}</div>
+          <br>
+          <div class="jsonreg">license{</div>
+          <div class="jsonk">"id"             </div><div class="jsonv">: int,</div>
+          <div class="jsonk">"name"           </div><div class="jsonv">: str,</div>
+          <div class="jsonk">"url"            </div><div class="jsonv">: str,</div>
+          <div class="jsonreg">}</div>
+          <br>
+          <div class="jsonreg">category{</div>
+          <div class="jsonk">"id"             </div><div class="jsonv">: int,</div>
+          <div class="jsonk">"name"           </div><div class="jsonv">: str,</div>
+          <div class="jsonk">"supercategory"  </div><div class="jsonv">: str,</div>
+          <div class="jsonk">"keypoints"      </div><div class="jsonv">: [str],</div>
+          <div class="jsonk">"skeleton"       </div><div class="jsonv">: [edge],</div>
+          <div class="jsonreg">}</div>
+          
+        </div>
+
+        <br>
+        <p>
+          The differences between COCO style and crowdpose style annotation are as follows: 1) In SynPose14(crowdpose style), it has 14 joints but in SynPose17(COCO style), it has 17. So it will affect the length of annotation->keypoints and category->keypoints. In SynPose14, the length of annotation->keypoints should be 3 * 14 = 42. In SynPose17, the number should be 3 * 17 = 51. 2) Joint connection in COCO and crowdpose is different. See <a href="inner-keypoint.html">Keypoints</a> for more details. This will affect the array in category->skeleton.
+        </p>
+
+        <p>
+          We provide a mini batch of our dataset, and it can be obtained from <a href="">SynPose14</a> and <a href="">SynPose17</a>.
+        </p>
+
       </div>
     </section>
 

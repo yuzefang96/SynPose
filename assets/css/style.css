@@ -1144,3 +1144,53 @@ section {
   text-align: justify;
 
 }
+
+/* JSON ------------------------------------ */
+.json {
+  border:2px solid #a1a1a1;
+  padding:10px 40px;
+  background:#d6ffd6;
+  width:100%;
+  border-radius:5px;
+}
+.jsontab {
+  padding-left:20px;
+}
+.jsonreg {
+  font-family:Consolas,Courier,monospace;
+}
+.jsonk {
+  font-family:Consolas,Courier,monospace;
+  display:inline-block;
+  padding-left:20px;
+  width:25%;
+  color:#036;
+}
+.jsonkfunc {
+  font-family:Consolas,Courier,monospace;
+  display:inline-block;
+  padding-left:20px;
+  width:25%;
+  color:mediumblue;
+  line-height:2;
+}
+.jsonktxt {
+  display:inline-block;
+  padding-left:20px;
+  width:25%;
+}
+.jsonv {
+  font-family:Consolas,Courier,monospace;
+  display:inline-block;
+  width:70%;
+  color:#800;
+}
+.jsonvtxt {
+  display:inline-block;
+  width:70%;
+}
+.jsonblk {
+  font-family:Consolas,Courier,monospace;
+  display:inline-block;
+  width:49%;
+}
