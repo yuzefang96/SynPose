@@ -114,7 +114,8 @@
     <section class="inner-page">
       <div class="container">
         <p>
-          SynPose has two annotation types: COCO style and crowdpose style. Both of their data format are inspired by <a href="https://cocodataset.org/#format-data">COCO's data format</a>. The annotations are stored using JSON. The following shows the basic data structure of SynPose:
+          The annotations of SynPose are stored using JSON.  The data format is borrowed from  <a href="https://cocodataset.org/#format-data">COCO format</a>. 
+          All annotations of subset SynPose14 and SynPose17 share the same basic data structure below:
         </p>
 
         <div class="json">
@@ -144,9 +145,11 @@
           <div class="jsonk">"id"             </div><div class="jsonv">: int,</div>
           <div class="jsonk">"image_id"       </div><div class="jsonv">: int,</div>
           <div class="jsonk">"category_id"    </div><div class="jsonv">: int,</div>
-          <div class="jsonk">"bbox"           </div><div class="jsonv">: [x,y,width,height],</div>
-          <div class="jsonk">"keypoints"      </div><div class="jsonv">: [x1,y1,v1,...],</div>
           <div class="jsonk">"num_keypoints"  </div><div class="jsonv">: int,</div>
+          <div class="jsonk">"keypoints"      </div><div class="jsonv">: [x1,y1,v1,...],</div>
+          <div class="jsonk">"bbox"           </div><div class="jsonv">: [x,y,width,height],</div>
+          
+         
           <div class="jsonreg">}</div>
           <br>
           <div class="jsonreg">category{</div>
@@ -160,13 +163,34 @@
         </div>
 
         <br>
-        <!-- <p>
-          The differences between COCO style and crowdpose style annotation are as follows: 1) In SynPose14(crowdpose style), it has 14 joints but in SynPose17(COCO style), it has 17. So it will affect the length of annotation->keypoints and category->keypoints. In SynPose14, the length of annotation->keypoints should be 3 * 14 = 42. In SynPose17, the number should be 3 * 17 = 51. 2) Joint connection in COCO and crowdpose is different. See <a href="inner-keypoint.html">Keypoints</a> for more details. This will affect the array in category->skeleton.
-        </p> -->
+        <br>
+        <p>As with COCO format, the "keypoints" field is a length 3k array where k is the total number of keypoints defined for the category. Each keypoint has a 0-indexed location x,y and a visibility flag v. 
+          The difference is that in SynPose, the flag v is defined as v=0: occluded, v=1: self-occluded, and v=2: visible. (For the difference between occluded and self-occluded please check <a href="./inner-keypoint.html">here</a>.)
+          for each category, the categories struct has two additional fields: "keypoints," which is a length k array of keypoint names, and "skeleton", which defines connectivity via a list of keypoint edge pairs and is used for visualization.
+          <br>
+          <br>
+          The only difference between the annotation of SynPose14 and SynPose17 is the 'keypoint' and 'skeleton' fields. In SynPose14 that will be:
+        </p>
 
-        <!-- <p>
-          We provide a mini batch of our dataset, and it can be obtained from <a href="">SynPose14</a> and <a href="">SynPose17</a>.
-        </p> -->
+        <div class="json">
+         
+          <div class="jsonreg">category{</div>
+          <div class="jsonk">"keypoints" <br>  <br>     </div><div class="jsonv">: ['left_shoulder', 'right_shoulder', 'left_elbow', 'right_elbow', 'left_wrist', 'right_wrist', 'left_hip', 'right_hip', 'left_knee', 'right_knee', 'left_ankle', 'right_ankle', 'head', 'neck'],</div>
+          <div class="jsonk">"skeleton"       </div><div class="jsonv">: [[12, 13], [13, 0], [13, 1], [0, 2], [2, 4], [1, 3], [3, 5], [13, 7], [13, 6], [7, 9], [9, 11], [6, 8], [8, 10]],</div>
+          <div class="jsonreg">}</div>
+          
+        </div>
+        <br>
+
+        <p>In SynPose17:</p>
+        <div class="json">
+         
+          <div class="jsonreg">category{</div>
+          <div class="jsonk">"keypoints" <br>  <br>     </div><div class="jsonv">: ['nose', 'left_eye', 'right_eye', 'left_ear', 'right_ear', 'left_shoulder', 'right_shoulder', 'left_elbow', 'right_elbow', 'left_wrist', 'right_wrist', 'left_hip', 'right_hip', 'left_knee', 'right_knee', 'left_ankle', 'right_ankle'],</div>
+          <div class="jsonk">"skeleton"       </div><div class="jsonv">:[[16, 14], [14, 12], [17, 15], [15, 13], [12, 13], [6, 12], [7, 13], [6, 7], [6, 8], [7, 9], [8, 10], [9, 11], [2, 3], [1, 2], [1, 3], [2, 4], [3, 5], [4, 6], [5, 7]],</div>
+          <div class="jsonreg">}</div>
+          
+        </div>
 
       </div>
     </section>

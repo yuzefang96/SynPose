@@ -1147,32 +1147,39 @@ section {
 
 /* JSON ------------------------------------ */
 .json {
-  border:2px solid #a1a1a1;
+  border:2px solid #202020;
   padding:10px 40px;
-  background:#d6ffd6;
+  background:#ebf7ed;
   width:100%;
-  border-radius:5px;
+  border-radius:0px;
 }
 .jsontab {
   padding-left:20px;
 }
 .jsonreg {
-  font-family:Consolas,Courier,monospace;
+  /* font-family:Consolas,Courier,monospace; */
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
 }
 .jsonk {
-  font-family:Consolas,Courier,monospace;
+  /* font-family:Consolas,Courier,monospace; */
+  font-family: "Raleway", sans-serif;
   display:inline-block;
   padding-left:20px;
   width:25%;
   color:#036;
+  font-weight: 600;
 }
 .jsonkfunc {
-  font-family:Consolas,Courier,monospace;
+  /* font-family:Consolas,Courier,monospace; */
+  font-family: "Raleway", sans-serif;
   display:inline-block;
   padding-left:20px;
   width:25%;
   color:mediumblue;
   line-height:2;
+  font-weight: 600;
+  
 }
 .jsonktxt {
   display:inline-block;
@@ -1180,17 +1187,21 @@ section {
   width:25%;
 }
 .jsonv {
-  font-family:Consolas,Courier,monospace;
+  /* font-family:Consolas,Courier,monospace; */
+  font-family: "Raleway", sans-serif;
   display:inline-block;
   width:70%;
   color:#800;
+  font-weight: 600;
 }
 .jsonvtxt {
   display:inline-block;
   width:70%;
 }
 .jsonblk {
-  font-family:Consolas,Courier,monospace;
+  /* font-family:Consolas,Courier,monospace; */
+  font-family: "Raleway", sans-serif;
   display:inline-block;
+  font-weight: 600;
   width:49%;
 }
