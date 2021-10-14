@@ -122,7 +122,6 @@
           <div class="jsonk">"info"           </div><div class="jsonv">: info,</div>
           <div class="jsonk">"images"         </div><div class="jsonv">: [image],</div>
           <div class="jsonk">"annotations"    </div><div class="jsonv">: [annotation],</div>
-          <div class="jsonk">"licenses"       </div><div class="jsonv">: [license],</div>
           <div class="jsonk">"categories"       </div><div class="jsonv">: [category],</div>
           <div class="jsonreg">}</div>
           <br>
@@ -131,7 +130,6 @@
           <div class="jsonk">"version"        </div><div class="jsonv">: str,</div>
           <div class="jsonk">"description"    </div><div class="jsonv">: str,</div>
           <div class="jsonk">"contributor"    </div><div class="jsonv">: str,</div>
-          <div class="jsonk">"url"            </div><div class="jsonv">: str,</div>
           <div class="jsonk">"date_created"   </div><div class="jsonv">: datetime,</div>
           <div class="jsonreg">}</div>
           <br>
@@ -140,10 +138,6 @@
           <div class="jsonk">"width"          </div><div class="jsonv">: int,</div>
           <div class="jsonk">"height"         </div><div class="jsonv">: int,</div>
           <div class="jsonk">"file_name"      </div><div class="jsonv">: str,</div>
-          <!-- <div class="jsonk">"license"        </div><div class="jsonv">: int,</div>
-          <div class="jsonk">"flickr_url"     </div><div class="jsonv">: str,</div>
-          <div class="jsonk">"coco_url"       </div><div class="jsonv">: str,</div>
-          <div class="jsonk">"date_captured"  </div><div class="jsonv">: datetime,</div> -->
           <div class="jsonreg">}</div>
           <br>
           <div class="jsonreg">annotation{</div>
@@ -151,15 +145,8 @@
           <div class="jsonk">"image_id"       </div><div class="jsonv">: int,</div>
           <div class="jsonk">"category_id"    </div><div class="jsonv">: int,</div>
           <div class="jsonk">"bbox"           </div><div class="jsonv">: [x,y,width,height],</div>
-          <div class="jsonk">"iscrowd"        </div><div class="jsonv">: 0 or 1,</div>
           <div class="jsonk">"keypoints"      </div><div class="jsonv">: [x1,y1,v1,...],</div>
           <div class="jsonk">"num_keypoints"  </div><div class="jsonv">: int,</div>
-          <div class="jsonreg">}</div>
-          <br>
-          <div class="jsonreg">license{</div>
-          <div class="jsonk">"id"             </div><div class="jsonv">: int,</div>
-          <div class="jsonk">"name"           </div><div class="jsonv">: str,</div>
-          <div class="jsonk">"url"            </div><div class="jsonv">: str,</div>
           <div class="jsonreg">}</div>
           <br>
           <div class="jsonreg">category{</div>
